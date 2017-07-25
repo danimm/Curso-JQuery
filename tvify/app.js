@@ -79,11 +79,16 @@ $(function() {
                         "<p>:summary:</p>" +
                       '</div>' +
                     '</article>';
-  $.ajax({
-  url: 'http://api.tvmaze.com/shows',
-  success: function(shows, textStatus, xhr) {
+//   $.ajax({
+//   url: 'http://api.tvmaze.com/shows',
+//   success: function(shows, textStatus, xhr) {
+//     $tvShowsContainer.find('.loader').remove();
+//     renderShows(shows);
+//   }
+// })
+$.ajax('http://api.tvmaze.com/shows')
+  .then(function (shows) {
     $tvShowsContainer.find('.loader').remove();
     renderShows(shows);
-  }
-})
+  })
 })
