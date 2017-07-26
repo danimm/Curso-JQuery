@@ -15,6 +15,7 @@ body{
   position: fixed;
   background: #2ecc71;
   text-align: center;
+  z-index: 10;
 }
 
 #app-header h1{
@@ -49,7 +50,15 @@ body{
   padding: 16px;
   background-color: white;
   margin-bottom: 16px;
+  position: relative;
   /*display: flex;*/
+}
+
+.tv-show.liked{
+  background-color: #E08283;
+}
+.tv-show.liked:hover{
+  background-color: lightblue;
 }
 
 .tv-show:hover{
@@ -85,13 +94,30 @@ body{
 }
 
 #app-body button{
-  font-size: 20px;
+  /*font-size: 20px;*/
 }
 
 #app-body .search-form input[type="text"] {
   padding: 6px;
   border-radius: 6px;
 }
+
+.tv-show button.like{
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  transition: all 1s ease;
+}
+
+.tv-show.liked button.like {
+  font-size: 40px;
+}
+
+
 
 .loader,
 .loader:after {
